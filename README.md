@@ -26,4 +26,4 @@ Attribute Information:
 - Text : text of the review
 
 
-# Heroku app: https://food-reviews-prediction.herokuapp.com/
+**Heroku app: https://food-reviews-prediction.herokuapp.com/**
