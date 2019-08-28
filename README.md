@@ -24,3 +24,6 @@ Attribute Information:
 - Time : timestamp for the review
 - Summary : brief summary of the review
 - Text : text of the review
+
+
+# Heroku app: https://food-reviews-prediction.herokuapp.com/
