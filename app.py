@@ -76,8 +76,9 @@ def index():
 def predict():
     clf = joblib.load('model.pkl')
     count_vect = joblib.load('count_vect.pkl')
-    to_predict_list = request.form.to_dict()
-    review_text = clean_text(to_predict_list['review_text'])
+    to_predict_list = request.form['review_text']
+    data = [to_predict_list]
+    review_text = clean_text(data)
     pred = clf.predict(count_vect.transform([review_text]).toarray())
     # if pred[0]:
      #   prediction = "Positive"
