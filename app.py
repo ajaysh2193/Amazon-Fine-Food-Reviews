@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import numpy as np
 from sklearn.externals import joblib
 import pandas as pd
