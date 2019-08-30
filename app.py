@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request
 import numpy as np
 from sklearn.externals import joblib
 import pandas as pd
@@ -62,12 +62,12 @@ def clean_text(sentence):
 ###################################################
 
 
+# @app.route('/')
+# def hello_world():
+  #  return 'Hello World!'
+
+
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
-@app.route('/index')
 def index():
     return flask.render_template('index.html')
 
@@ -84,8 +84,8 @@ def predict():
     # else:
        #  prediction = "Negative"
 
-    return jsonify({'prediction': pred})
+    return render_template('index.html', prediction = pred)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(debug = True)
