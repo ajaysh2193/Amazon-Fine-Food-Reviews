@@ -78,13 +78,13 @@ def predict():
     count_vect = joblib.load('count_vect.pkl')
     to_predict_list = request.form.to_dict()
     review_text = clean_text(to_predict_list['review_text'])
-    pred = clf.predict(count_vect.transform([review_text]))
-    if pred[0]:
-        prediction = "Positive"
-    else:
-        prediction = "Negative"
+    pred = clf.predict(count_vect.transform([review_text]).toarray())
+    # if pred[0]:
+     #   prediction = "Positive"
+    # else:
+       #  prediction = "Negative"
 
-    return jsonify({'prediction': prediction})
+    return jsonify({'prediction': pred})
 
 
 if __name__ == '__main__':
